@@ -5,6 +5,7 @@
     margin: 0;
     padding: 0;
 }
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -47,6 +48,13 @@ ul li a:hover{
     color: black;
     border-radius: 20px;
     border: none;
+    transition: all0.3s ease;
+    cursor: pointer;
+}
+.hero button:hover {
+    background-color: #cc4400;
+    transform: scale(1.1);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
 }
 .popular-dishes h2 {
     margin-bottom: 40px;
