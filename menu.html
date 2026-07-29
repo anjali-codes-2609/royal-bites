@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background: linear-gradient(to right, #fdfaf6, #f8decf);">
+    <nav>
+        <h1>Royal Bites 🍽</h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li> 
+            <li><a href="#" onclick="toggleCart()">Cart</a></li>
+        </ul>
+    </nav>
+    <h1 style="text-align: center; color: tomato; margin-top: 50px; letter-spacing: 1px; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);">Our Grand Menu</h1>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-bottom: 40px; margin-top: 20px;">
+        <button id="btn-starters" class="category-btn" onclick="showStarters()" style="padding: 10px 25px; font-size: 16px; font-weight: bold; cursor: pointer; border-radius: 8px; border: 1px solid #ccc; background-color: white; color: #333;">Starters</button>
+        <button id="btn-quick" class="category-btn" onclick="showQuickBites()" style="padding: 10px 25px; font-size: 16px; font-weight: bold; cursor: pointer; border-radius: 8px; border: 1px solid #ccc; background-color: white; color: #333;">Quick Bites</button>
+        <button id="btn-menu" class="category-btn" onclick="showFoodMenu()" style="padding: 10px 25px; font-size: 16px; font-weight: bold; cursor: pointer; border-radius: 8px; border: 1px solid #ccc; background-color: white; color: #333;">Food Menu</button>
+        <button id="btn-dessert" class="category-btn" onclick="showDessert()" style="padding: 10px 25px; font-size: 16px; font-weight: bold; cursor: pointer; border-radius: 8px; border: 1px solid #ccc; background-color: white; color: #333;">Desserts</button>
+    </div>
+    <div class="menu-container">
+        <h2 id="starters-heading" style="display: none; margin-bottom: 20px;">🍟 Starters</h2>
+        <div id="starters" style="display: none; justify-content: space-between; align-items: flex-start; gap: 30px;">
+            <div class="menu-section">
+                <div class="menu-item">
+                    <h3>🟢 French Fries</h3>
+                    <p>₹120</p>
+                    <button class="add-btn" onclick="addToCart('French Fries', 120)">Add To Cart</button>
+                </div>
+                <div class="menu-item">
+                    <h3>🟢 Cheese Balls</h3>
+                    <p>₹180</p>
+                    <button class="add-btn" onclick="addToCart('Cheese Balls', 180)">Add To Cart</button>
+                </div>
+                <div class="menu-item">
+                    <h3>🟢 Spring Roll</h3>
+                    <p>₹150</p>
+                    <button class="add-btn" onclick="addToCart('Spring Roll', 150)">Add To Cart</button>
+                </div>
+                <div class="menu-item">
+                    <h3>🟢 Lolly Pop Dry</h3>
+                    <p>₹190</p>
+                    <button class="add-btn" onclick="addToCart('Lolly Pop Dry', 190)">Add To Cart</button>
+                </div>
+                <div class="menu-item">
+                    <h3>🟢 Paneer Tikka</h3>
+                    <p>₹240</p>
+                    <button class="add-btn" onclick="addToCart('Paneer Tikka', 240)">Add To Cart</button>
+                </div>
+                <div class="menu-item">
+                    <h3>🟢 Cheese Kabab</h3>
+                    <p>₹250</p>
+                    <button class="add-btn" onclick="addToCart('Cheese Kabab', 250)">Add To Cart</button>
+                </div>
+                <div class="menu-item">
+                    <h3>🟢 Cheese Pakoda</h3>
+                    <p>₹170</p>
+                    <button class="add-btn" onclick="addToCart('Cheese Pakoda', 170)">Add To Cart</button>
+                </div>
+                <div class="menu-item">
+                    <h3>🟢 Onion Ring</h3>
+                    <p>₹140</p>
+                    <button class="add-btn" onclick="addToCart('Onion Ring', 140)">Add To Cart</button>
+                </div>
+                <div class="menu-item">
+                    <h3>🟢 Green Salad</h3>
+                    <p>₹90</p>
+                    <button class="add-btn" onclick="addToCart('Green Salad', 90)">Add To Cart</button>
+                </div>
+                <div class="menu-item">
+                    <h3>🟢 Veggie Salad</h3>
+                    <p>₹110</p>
+                    <button class="add-btn" onclick="addToCart('Veggie Salad', 110)">Add To Cart</button>
+                </div>
+            </div>
+            <img src="salad.jpg" style="width: 250px; height: 250px; object-fit: cover; border-radius: 50%; margin-bottom: 10px; box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);">
+        </div>
+        <div class="menu-section" id="quick-bites" style="display: none;">
+            <h2 style="margin-top: 10px; margin-bottom: 50px;">🍕 Quick Bites</h2>
+            <h3 style="text-align: left; margin-left: 20px; margin-bottom: 10px;" >Burger & Sandwiches:-</h3>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 30px;">
+                <div class="menu-section">
+                    <div class="menu-item">
+                        <h3>🟢 Veg Aloo Tikki Burger</h3>
+                        <p>₹90</p>
+                        <button class="add-btn" onclick="addToCart('Veg Aloo Tikki Burger', 90)">Add To Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <h3>🟢 Double Cheese Burger</h3>
+                        <p>₹130</p>
+                        <button class="add-btn" onclick="addToCart('Double Cheese Burger', 130)">Add To Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <h3>🟢 Paneer Tikka Sandwich</h3>
+                        <p>₹150</p>
+                        <button class="add-btn" onclick="addToCart('Paneer Tikka Sandwich', 150)">Add To Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <h3>🟢 Grilled Club Sandwich</h3>
+                        <p>₹160</p>
+                        <button class="add-btn" onclick="addToCart('Grilled Club Sandwich', 160)">Add To Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <h3>🟢 Tandoori Paneer Burger</h3>
+                        <p>₹140</p>
+                        <button class="add-btn" onclick="addToCart('Tandoori Paneer Burger', 140)">Add To Cart</button>
+                    </div>
+                </div>
+                <img src="burger.jpg" style="width: 250px; border-radius: 50%; mix-blend-mode: multiply; margin-bottom: 10px; box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);">
+            </div>
+            <h3 style="margin-left: 20px; margin-bottom: 10px; text-align: left; margin-top: 50px; width: 100%;">Chinese & Noodles:- </h3>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 30px;">
+                <div class="menu-section">
+                    <div class="menu-item">
+                        <h3>🟢 Veg Hakka Noodles</h3>
+                        <p>₹150</p>
+                        <button class="add-btn" onclick="addToCart('Veg Hakka Noodles', 150)">Add To Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <h3>🟢 Chilli Garlic Noodles</h3>
+                        <p>₹160</p>
+                        <button class="add-btn" onclick="addToCart('Chilli Garlic Noodles', 160)">Add To Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <h3>🟢 Veg Manchurian(Dry)</h3>
+                        <p>₹180</p>
+                        <button class="add-btn" onclick="addToCart('Veg Manchurian', 180)">Add To Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <h3>🟢 Paneer Chilli</h3>
+                        <p>₹220</p>
+                        <button class="add-btn" onclick="addToCart('Paneer Chilli', 220)">Add To Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <h3>🟢 Veg Fried Rice</h3>
+                        <p>₹160</p>
+                        <button class="add-btn" onclick="addToCart('Veg Fried Rice', 160)">Add To Cart</button>
+                    </div>
+                </div>
+                <img src="chow.jpg" style="width: 250px; border-radius: 50%; margin-bottom: 10px; box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);">
+            </div>
+            <h3 style="margin-left: 20px; margin-bottom: 10px; margin-top: 50px; text-align: left; width: 100%;">Pizza:- </h3>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 30px;">
+                <div class="menu-section">
+                    <div class="menu-item">
+                        <h3>🟢 Margherita Pizza</h3>
+                        <p>₹150</p>
+                        <button class="add-btn" onclick="addToCart('Margherita Pizza', 150)">Add To Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <h3>🟢 Farmhouse Veg Pizza</h3>
+                        <p>₹250</p>
+                        <button class="add-btn" onclick="addToCart('Farmhouse Veg Pizza', 250)">Add To Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <h3>🟢 Paneer Tikka Pizza</h3>
+                        <p>₹280</p>
+                        <button class="add-btn" onclick="addToCart('Paneer Tikka Pizza', 280)">Add To Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <h3>🟢 Spicy Veggie Delight Pizza</h3>
+                        <p>₹220</p>
+                        <button class="add-btn" onclick="addToCart('Spicy Veggie Delight Pizza', 220)">Add To Cart</button>
+                    </div>
+                </div>
+                <img src="pizza_1.jpg" style="width: 250px; border-radius: 50%; margin-bottom: 10px; box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);">
+            </div>
+            <h3 style="margin-left: 20px; margin-bottom: 10px; margin-top: 50px; text-align: left; width: 100%;">Momos:- </h3>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 30px;">
+                <div class="menu-section">
+                    <div class="menu-item">
+                        <h3>🟢 Veg Steamed Momos</h3>
+                        <p>₹80</p>
+                        <button class="add-btn" onclick="addToCart('Veg Stemed Momos', 80)">Add To Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <h3>🟢 Veg Fried Momos</h3>
+                        <p>₹100</p>
+                        <button class="add-btn" onclick="addToCart('Veg fried Momos', 100)">Add To Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <h3>🟢 Paneeer Kurkure Momos</h3>
+                        <p>₹150</p>
+                        <button class="add-btn" onclick="addToCart('Paneer Kurkure Momos', 150)">Add To Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <h3>🟢 Chilli Garlic Momos</h3>
+                        <p>₹130</p>
+                        <button class="add-btn" onclick="addToCart('Chilli Garlic Momos', 130)">Add To Cart</button>
+                    </div>
+                </div>
+                <img src="momos.jpg" style="width: 250px; border-radius: 50%; margin-bottom: 10px; box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);">
+            </div>
+            <h3 style="margin-left: 20px; margin-bottom: 10px; margin-top: 50px; text-align: left; width: 100%;">Indian Street Food:- </h3>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 30px;">
+                <div class="menu-section">
+                    <div class="menu-item">
+                        <h3>🟢 Delhi Wale Chole Bhature</h3>
+                        <p>₹140</p>
+                        <button class="add-btn" onclick="addToCart('Delhi Wale Chole Bhature', 140)">Add To Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <h3>🟢 Mumbai Special Pav Bhaji</h3>
+                        <p>₹130</p>
+                        <button class="add-btn" onclick="addToCart('Mumbai Special Pav Bhaji', 130)">Add To Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <h3>🟢 Crispy Aloo Tikki Chaat</h3>
+                        <p>₹90</p>
+                        <button class="add-btn" onclick="addToCart('Crispy Aloo Tikki Chaat', 90)">Add To Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <h3>🟢 Punjabi Samosa Chaat</h3>
+                        <p>₹130</p>
+                        <button class="add-btn" onclick="addToCart('Punjabi Samosa Chaat', 130)">Add To Cart</button>
+                    </div>
+                </div>
+                <img src="pav.jpg" style="width: 250px; border-radius: 50%; margin-bottom: 10px; box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);">
+            </div>
+        </div>
+        <div class="menu-section" id="menu" style="display: none;">
+            <h2 style="margin-top: 10px; margin-bottom: 50px;">Food Menu</h2>
+            <h3 style="text-align: left; margin-left: 20px; margin-bottom: 10px;" >North Indian (Main Course):-</h3>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 30px;">
+                <div class="menu-section">
+                    <div class="menu-item">
+                        <h3>🟢 Paneer Butter Masala</h3>
+                        <p>₹220</p>
+                        <button class="add-btn" onclick="addToCart('Paneer Butter Masala', 220)">Add To Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <h3>🟢 Dal Makhani</h3>
+                        <p>₹180</p>
+                        <button class="add-btn" onclick="addToCart('Dal Makhani', 180)">Add To Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <h3>🟢 Kadhai Paneer</h3>
+                        <p>₹200</p>
+                        <button class="add-btn" onclick="addToCart('Kadhai Paneer', 200)">Add To Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <h3>🟢 Mix Veg Curry</h3>
+                        <p>₹160</p>
+                        <button class="add-btn" onclick="addToCart('Mix Vrg Curry', 160)">Add To Cart</button>
+                    </div>
+                </div>
+                <img src="kadhai.jpg" style="width: 250px; border-radius: 50%; mix-blend-mode: multiply; margin-bottom: 10px; box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);">
+            </div>
+            <h3 style="text-align: left; margin-left: 20px; margin-bottom: 10px; margin-top: 50px;" >Breads (Roti & Naan):-</h3>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 30px;">
+                <div class="menu-section">
+                    <div class="menu-item">
+                        <h3>🟢 Butter Naan</h3>
+                        <p>₹40</p>
+                        <button class="add-btn" onclick="addToCart('Butter Naan', 40)">Add To Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <h3>🟢 Garlic Naan</h3>
+                        <p>₹50</p>
+                        <button class="add-btn" onclick="addToCart('Garlic Naan', 50)">Add To Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <h3>🟢 Tandoori Roti</h3>
+                        <p>₹15</p>
+                        <button class="add-btn" onclick="addToCart('Tandoori Roti', 15)">Add To Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <h3>🟢 Lachha Paratha</h3>
+                        <p>₹45</p>
+                        <button class="add-btn" onclick="addToCart('Lacha Paratha', 45)">Add To Cart</button>
+                    </div>
+                </div>
+                <img src="roti.jpg" style="width: 250px; border-radius: 50%; mix-blend-mode: multiply; margin-bottom: 10px; box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);">
+            </div>
+            <h3 style="text-align: left; margin-left: 20px; margin-bottom: 10px; margin-top: 50px;" >Rice & Biryani:-</h3>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 30px;">
+                <div class="menu-section">
+                    <div class="menu-item">
+                        <h3>🟢 Veg Dum Biryani</h3>
+                        <p>₹190</p>
+                        <button class="add-btn" onclick="addToCart('Veg Dum Biryani', 190)">Add To Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <h3>🟢 Jeera Rice</h3>
+                        <p>₹110</p>
+                        <button class="add-btn" onclick="addToCart('Jeera Rice', 110)">Add To Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <h3>🟢 Hyderabadi Veg Biryani </h3>
+                        <p>₹210</p>
+                        <button class="add-btn" onclick="addToCart('Hyderabadi Veg Biryani', 210)">Add To Cart</button>
+                    </div>
+                </div>
+                <img src="rice.jpg" style="width: 250px; border-radius: 50%; mix-blend-mode: multiply; margin-bottom: 10px; box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);">
+            </div>
+        </div>
+        <div class="menu-section" id="dessert" style="display: none;">
+            <h2 style="margin-top: 10px; margin-bottom: 50px;">Desserts</h2>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 30px;">
+                <div class="menu-section">
+                    <div class="menu-item">
+                        <h3>🟢 Hot Gulab Jamun (2pcs)</h3>
+                        <p>₹80</p>
+                        <button class="add-btn" onclick="addToCart('Hot Gulab Jamun', 80)">Add To Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <h3>🟢 Banarasi Rabri Jalebi</h3>
+                        <p>₹120</p>
+                        <button class="add-btn" onclick="addToCart('Banarasi Rabri Jalebi', 120)">Add To Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <h3>🟢 Moong Dal Halwa</h3>
+                        <p>₹140</p>
+                        <button class="add-btn" onclick="addToCart('Moong Dal Halwa', 140)">Add To Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <h3>🟢 Sizzling Brownie with Ice Cream</h3>
+                        <p>₹180</p>
+                        <button class="add-btn" onclick="addToCart('Sizzling Brownie with Ice Cream', 180)">Add To Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <h3>🟢 Choice of Ice Cream (Vanilla / Chocolate / Butterscotch)</h3>
+                        <p>₹90</p>
+                        <button class="add-btn" onclick="addToCart('Choice of Ice Cream (Vanilla / Chocolate / Butterscotch)', 90)">Add To Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <h3>🟢 Kesar Pista Kulfi</h3>
+                        <p>₹100</p>
+                        <button class="add-btn" onclick="addToCart('Kesar Pista Kulfi', 100)">Add To Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <h3>🟢 Special Banarasi Paan</h3>
+                        <p>₹40</p>
+                        <button class="add-btn" onclick="addToCart('Special Banarasi Paan', 40)">Add To Cart</button>
+                    </div>
+                </div>
+                <img src="ice.jpg" style="width: 250px; border-radius: 50%; mix-blend-mode: multiply; margin-bottom: 10px; box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);">
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2026 Royal Bites. All rights reserved.</p>
+        <p>Visit us at: Assi Ghat, Varanasi </p>
+        <p>Follow us on Instagram</p>
+    </footer>
+    <script>
+        function showStarters() {
+            document.getElementById('starters').style.display = 'flex';
+            document.getElementById('starters-heading').style.display = 'block';
+            document.getElementById('quick-bites').style.display = 'none';
+            document.getElementById('menu').style.display = 'none';
+            document.getElementById('dessert').style.display = 'none';
+            document.getElementById('btn-starters').style.backgroundColor = '#333';
+            document.getElementById('btn-starters').style.color = 'white';
+            document.getElementById('btn-quick').style.backgroundColor = 'white';
+            document.getElementById('btn-quick').style.color = '#333';
+            document.getElementById('btn-menu').style.backgroundColor = 'white';
+            document.getElementById('btn-menu').style.color = '#333';
+            document.getElementById('btn-dessert').style.backgroundColor = 'white';
+            document.getElementById('btn-dessert').style.color = '#333';
+        }
+        function showQuickBites() {
+            document.getElementById('starters').style.display = 'none';
+            document.getElementById('starters-heading').style.display = 'none';
+            document.getElementById('menu').style.display = 'none';
+            document.getElementById('quick-bites').style.display = 'block';
+            document.getElementById('dessert').style.display = 'none';
+            document.getElementById('btn-quick').style.color = 'white';
+            document.getElementById('btn-quick').style.backgroundColor = '#333';
+            document.getElementById('btn-starters').style.color = '#333';
+            document.getElementById('btn-starters').style.backgroundColor = 'white';
+            document.getElementById('btn-menu').style.backgroundColor = 'white';
+            document.getElementById('btn-menu').style.color = '#333';
+            document.getElementById('btn-dessert').style.backgroundColor = 'white';
+            document.getElementById('btn-dessert').style.color = '#333';
+        }
+        function showFoodMenu() {
+            document.getElementById('starters').style.display = 'none';
+            document.getElementById('starters-heading').style.display = 'none';
+            document.getElementById('quick-bites').style.display = 'none';
+            document.getElementById('menu').style.display = 'block';
+            document.getElementById('dessert').style.display = 'none';
+            document.getElementById('btn-starters').style.backgroundColor = 'white';
+            document.getElementById('btn-starters').style.color = '#333';
+            document.getElementById('btn-quick').style.backgroundColor = 'white';
+            document.getElementById('btn-quick').style.color = '#333';
+            document.getElementById('btn-menu').style.backgroundColor = '#333';
+            document.getElementById('btn-menu').style.color = 'white';
+            document.getElementById('btn-dessert').style.backgroundColor = 'white';
+            document.getElementById('btn-dessert').style.color = '#333';
+        }
+        function showDessert() {
+            document.getElementById('starters-heading').style.display = 'none';
+            document.getElementById('starters').style.display = 'none';
+            document.getElementById('quick-bites').style.display = 'none';
+            document.getElementById('menu').style.display = 'none';
+            document.getElementById('dessert').style.display = 'block';
+            document.getElementById('btn-starters').style.backgroundColor = 'white';
+            document.getElementById('btn-starters').style.color = '#333';
+            document.getElementById('btn-quick').style.backgroundColor = 'white';
+            document.getElementById('btn-quick').style.color = '#333';
+            document.getElementById('btn-menu').style.backgroundColor = 'white';
+            document.getElementById('btn-menu').style.color = '#333';
+            document.getElementById('btn-dessert').style.backgroundColor = '#333';
+            document.getElementById('btn-dessert').style.color = 'white';
+        }
+        let cart = [];
+        function addToCart(itemName, itemPrice) {
+            cart.push({ name: itemName, price: itemPrice });
+            console.log("New Item", cart);
+            updateCartUI(); 
+            alert(itemName + " has been added to your cart");
+        }
+        function updateCartUI() {
+            const cartItemsContainer = document.getElementById("cart-items");
+            const totalPriceElement = document.getElementById("total-price");
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p class="empty-cart-msg" style="margin-bottom: 10px;">Your cart is empty!</p>';
+                totalPriceElement.innerText = "0";
+                return;
+            }
+            cartItemsContainer.innerHTML = ""; 
+            let total = 0;
+            cart.forEach(function(item, index) {
+                const itemDiv = document.createElement("div");
+                itemDiv.style.marginBottom = "10px"; 
+                itemDiv.innerHTML = `<strong>${item.name}</strong> - ₹${item.price} <button class="remove-btn" onclick="removeItem(${index})">❌</button> `;
+                cartItemsContainer.appendChild(itemDiv);
+                total += item.price;
+            });
+            totalPriceElement.innerText = total;
+        }
+        function toggleCart() {
+            const cartSidebar = document.getElementById("side-cart");
+            cartSidebar.classList.toggle("open");
+        }
+        function checkout() {
+            if (cart.length === 0) {
+                alert("Your Cart is empty! Please add some tasty dishes 😋.");
+                return;
+            }
+            alert("Thank you for ordering from Royal Bites");
+            cart = [];
+            updateCartUI();
+            toggleCart();
+        }
+        function removeItem(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+    </script>
+    <div id="side-cart" class="cart-sidebar">
+        <h2 style="margin-left: 10px; margin-bottom: 10px;">Your Order</h2>
+        <div id="cart-items">
+            <p class="empty-cart-msg" style="margin-left: 10px; margin-bottom: 10px;">Your cart is empty!</p>
+        </div>
+        <div class="cart-total">
+            <h3 style="margin-left: 10px; margin-bottom: 10px;">Total: ₹<span id="total-price">0</span></h3>
+            <button class="checkout-btn" onclick="checkout()" style="margin-bottom: 10px;">Checkout Button</button>
+        </div>
+        <button id="close-cart" class="close-btn" onclick="toggleCart()">❌ Close</button>
+    </div>
+</body>
+</html>
